@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <title>Zamów sobie koszulkę! - Zadanie dla SalesTube/hmmh</title>
+
+    <script src="/js/product.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <main id="app">
+        
+        <div class="preview">
+            <div class="preview__side preview__side--front" style="display: block;">
+                <div class="preview__overprint">
+                    <img src="">
+                </div>
+            </div>
+
+            <div class="preview__side preview__side--back">
+                <div class="preview__overprint">
+                    <img src="">
+                </div>
+            </div>
+            
+
+            <div class="preview__switches">
+                <button class="preview__switch preview__switch--selected" data-side="front">Przód</button>
+                <button class="preview__switch" data-side="back">Tył</button>
+            </div>
+        </div>
+
+        <div class="steps">
+            <div class="warning"></div>
+
+            <div class="step step--1 step--current">
+                <header>
+                    <h2>Krok 1</h2>
+                    <h3>Wybierz nadruk</h3>
+                </header>
+
+                <div class="btn__grid btn__grid--image">
+                    <button class="btn__print btn__print--random">Wylosuj</button>
+                    <button class="btn__print btn__print--previous" disabled>Poprzedni</button>
+                    <button class="btn__print btn__print--next" disabled>Nastepny</button>
+                </div>
+
+                <div class="btn__grid btn__grid--steps">
+                    <button class="btn--goToStep" data-step="2">Dalej</button>
+                </div>
+            </div>
+
+            <div class="step step--2">
+                <header>
+                    <h2>Krok 2</h2>
+                    <h3>Podaj adres rachunku</h3>
+                </header>
+                
+                <form action="" class="form__grid" id="form__invoice_address">
+                    <div class="form__item">
+                        <input type="text" placeholder="Imię*" name="name" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Nazwisko*" name="surname" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Ulica*" name="street" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Nr domu*" name="building" required>
+                        <input type="text" placeholder="Nr mieszkania" name="flat">
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Kod pocztowy*" name="postal_code" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Miasto*" name="city" required>
+                    </div>
+
+                    <div class="form__item form__item--fullwidth">
+                        <input type="text" placeholder="Adres E-Mail*" name="email" required>
+                    </div>
+
+                    <div class="form__item form__item--fullwidth">
+                        <input type="text" placeholder="Numer telefonu" name="phone">
+                    </div>
+                </form>
+                
+                <div class="btn__grid btn__grid--steps">
+                    <button class="btn--goToStep" data-step="1">Wstecz</button>
+                    <button class="btn--goToStep" data-step="3">Dalej</button>
+                </div>
+            </div>
+
+            <div class="step step--3">
+                <header>
+                    <h2>Krok 3</h2>
+                    <h3>Dostawa</h3>
+                </header>
+
+                <div class="delivery">
+                    <h4>Sposób wysyłki</h4>
+                    <form id="form__delivery_method">
+                        <p>
+                            <input type="radio" class="delivery__method" id="pickup" value="pickup" name="delivery_method" checked>
+                            <label for="pickup">Odbiór osobisty (0§)</label>
+                        </p>
+
+                        <p>
+                            <input type="radio" class="delivery__method" id="delivery" value="delivery" name="delivery_method">
+                            <label for="delivery">Dostawa kurierem (5§)</label>
+                        </p>
+                    </form>
+                </div>
+                                
+                <div class="btn__grid btn__grid--steps">
+                    <button class="btn--goToStep" data-step="2">Cofnij</button>
+                    <button class="btn--goToStep" data-step="4">Dalej</button>
+                </div>
+            </div>
+
+            <div class="step step--3_5">
+                <header>
+                    <h2>Krok 3a</h2>
+                    <h3>Podaj adres do wysyłki</h3>
+                </header>
+                
+                <form class="form__grid" id="form__delivery_address">
+                    <div class="form__item form__item--fullwidth">
+                        <button type="button" class="form__button--use_invoice_address">Adres taki sam jak rachunku</button>
+                    </div>
+                    
+                    <div class="form__item">
+                        <input type="text" placeholder="Imię*" name="name" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Nazwisko*" name="surname" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Ulica*" name="street" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Nr domu*" name="building" required>
+                        <input type="text" placeholder="Nr mieszkania" name="flat">
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Kod pocztowy*" name="postal_code" required>
+                    </div>
+
+                    <div class="form__item">
+                        <input type="text" placeholder="Miasto*" name="city" required>
+                    </div>
+
+                    <div class="form__item form__item--fullwidth">
+                        <input type="text" placeholder="Adres E-Mail*" name="email" required>
+                    </div>
+
+                    <div class="form__item form__item--fullwidth">
+                        <input type="text" placeholder="Numer telefonu" name="phone">
+                    </div>
+                </form>
+                
+                <div class="btn__grid btn__grid--steps">
+                    <button class="btn--goToStep" data-step="3">Wstecz</button>
+                    <button class="btn--goToStep" data-step="4">Dalej</button>
+                </div>
+            </div>
+
+            <div class="step step--4">
+                <header>
+                    <h2>Krok 4</h2>
+                    <h3>Podsumowanie</h3>
+                </header>
+
+                <div class="summary">
+                    <div class="summary__item">
+                        <h4>Produkt</h4>
+                        <p class="summary__product"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Adres rachunku</h4>
+                        <p class="summary__invoice"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Sposób dostawy</h4>
+                        <p class="summary__delivery_method"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Adres dostawy</h4>
+                        <p class="summary__delivery"></p>
+                    </div>
+                </div>
+                                
+                <div class="btn__grid btn__grid--steps">
+                    <button class="btn--goToStep" data-step="3">Cofnij</button>
+                    <button class="btn--goToStep" data-step="5">Złóż zamówienie</button>
+                </div>
+            </div>
+
+            <div class="step step--5">
+                <header>
+                    <h2>Dziękujemy</h2>
+                    <h3>Twoje zamówienie zostało pomyślnie złożone!</h3>
+                </header>
+                
+                <div class="summary">
+                    <div class="summary__item">
+                        <h4>Produkt</h4>
+                        <p class="summary__product"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Adres rachunku</h4>
+                        <p class="summary__invoice"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Sposób dostawy</h4>
+                        <p class="summary__delivery_method"></p>
+                    </div>
+
+                    <div class="summary__item">
+                        <h4>Adres dostawy</h4>
+                        <p class="summary__delivery"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product__price_holder">
+            Cena: <span class="product__price">0.00</span>§
+        </div>
+    </main>
+</body>
+</html>
